@@ -58,7 +58,7 @@ function Response(stream) {
       let expireDate = new Date();
       expireDate.setFullYear(expireDate.getFullYear() + 1);
       expireDate.setDate(expireDate.getDate() - 1);
-      headers['expires'] = new Date();
+      headers['expires'] = expireDate;
       headers['last-modified'] = new Date();
       pushStream.respondWithFile(filepath, headers);
     });
